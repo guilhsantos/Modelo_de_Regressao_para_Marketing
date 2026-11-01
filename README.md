@@ -1,3 +1,5 @@
+🇧🇷 **Português** · [🇺🇸 English](README.en.md)
+
 # Regressão para investimento em marketing
 
 Modelo que estima as vendas a partir do investimento em YouTube, Facebook e jornal, para apoiar a decisão de onde colocar a verba.
