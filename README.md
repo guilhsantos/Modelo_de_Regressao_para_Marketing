@@ -1,29 +1,46 @@
-# Análise e Modelagem de Dados de Marketing
-## Descrição do Projeto
-A empresa realiza investimentos mensais em publicidade online (YouTube, Facebook e jornais) e registra os gastos e retornos de vendas. O objetivo deste projeto é analisar a relação entre esses investimentos e as vendas para identificar quais variáveis impactam mais as vendas e criar um modelo de regressão linear para prever o retorno das vendas baseado em novos investimentos.
+# Regressão para investimento em marketing
 
-## Dataset Utilizado
-O dataset utilizado foi o MKT.csv, que contém informações sobre investimentos em marketing e vendas. As colunas principais são:
+Modelo que estima as vendas a partir do investimento em YouTube, Facebook e jornal, para apoiar a decisão de onde colocar a verba.
 
-- youtube: Investimento em publicidade no YouTube
-- facebook: Investimento em publicidade no Facebook
-- newspaper: Investimento em publicidade em jornais
-- sales: Vendas resultantes dos investimentos em marketing
-# Passos Realizados
-## Passo 1: Análise Descritiva
-No primeiro passo, conectei ao Google Drive para carregar o dataset MKT.csv. Em seguida, importei as bibliotecas necessárias, como Pandas, NumPy, Seaborn, Matplotlib e SKLEARN, para manipulação de dados e modelagem. O dataset foi carregado e suas primeiras linhas foram visualizadas para entender a estrutura dos dados. Realizei a análise das informações gerais do dataset, incluindo a identificação de valores nulos. Além disso, foram geradas estatísticas descritivas para entender a distribuição dos investimentos e das vendas.
-## Passo 2: Análise Exploratória
-No segundo passo, realizei a análise exploratória dos dados. Gere estatísticas descritivas e um pairplot para examinar a relação entre os investimentos e as vendas. Também criei uma matriz de correlação para identificar as relações entre as variáveis e destacar os relacionamentos significativos.
-## Passo 3: Modelagem
-No terceiro passo, implementei um modelo de regressão linear utilizando a biblioteca SKLEARN. O dataset foi dividido em 80% para treino e 20% para teste. Avaliei o modelo usando métricas como MSE (Mean Squared Error), RMSE (Root Mean Squared Error) e R² (Coeficiente de Determinação) para verificar a precisão e o ajuste do modelo.
-## Passo 4: Predição
-No quarto passo, utilizei o modelo treinado para fazer predições com novos dados e comparei esses valores com os reais para avaliar o desempenho do modelo. Também realizei um teste de predição com novos valores de investimento para verificar a capacidade do modelo em estimar o retorno das vendas.
-## Resultados
-- MSE Linear: 5.57
-- RMSE Linear: 2.36
-- R² Linear: 0.87
-  
-O gráfico de dispersão dos valores reais x valores preditos mostra a qualidade do ajuste do modelo.
+[![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/guilhsantos/Modelo_de_Regressao_para_Marketing/blob/main/Modelo_de_Regress%C3%A3o_para_Marketing.ipynb)
 
-## Conclusão
-O modelo de regressão linear foi capaz de prever as vendas com base nos investimentos em marketing, e as métricas de avaliação indicam a eficácia do modelo.
+## Problema
+
+A empresa investe todo mês em três canais de mídia, mas não sabe quanto cada um contribui para as vendas nem quanto esperar de retorno de um novo plano de investimento.
+
+## Solução
+
+Regressão linear treinada com o histórico de investimento e vendas (`MKT.csv`), que recebe um plano de mídia e devolve a venda prevista.
+
+## Resultado
+
+No conjunto de teste (20% da base):
+
+| Métrica | Valor |
+|---|---|
+| **R²** | **0,87**: o modelo explica 87% da variação das vendas |
+| RMSE | 2,36 (na unidade de vendas da base) |
+| MSE | 5,58 |
+
+O notebook termina com um simulador: você informa o investimento em cada canal e recebe a venda prevista.
+
+## Como fiz
+
+1. **Análise descritiva:** estrutura, nulos e estatísticas de cada canal.
+2. **Análise exploratória:** pairplot e matriz de correlação entre investimento e vendas.
+3. **Modelagem:** regressão linear (scikit-learn) com divisão 80/20 entre treino e teste.
+4. **Avaliação:** MSE, RMSE, R² e gráfico de real × previsto.
+5. **Predição:** teste com valores novos de investimento.
+
+## Próximos passos
+
+- Ler os coeficientes para dizer quanto cada real a mais em cada canal rende em vendas.
+- Testar interação entre canais e retornos decrescentes, porque investir o dobro raramente vende o dobro.
+
+## Stack
+
+Python · pandas · NumPy · scikit-learn · Seaborn · Matplotlib · Google Colab
+
+---
+
+Feito por [Guilherme Santos](https://portifolio-guilherme-santos.vercel.app) · [LinkedIn](https://www.linkedin.com/in/guilherme-santos-dataeng)
